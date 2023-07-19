@@ -11,8 +11,7 @@ const App = () => {
     const fetchData = async () => {
       const apiKey = '24da1441bed1fc9afe4269790801b66e';
       const requests = cities.map(city =>
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
-      );
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
       const responses = await Promise.all(requests);
       const data = responses.map(response => response.data);
       setWeatherData(data);
