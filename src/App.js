@@ -27,6 +27,7 @@ const App = () => {
   const handleSearch = async () => {
     const apiKey = '24da1441bed1fc9afe4269790801b66e';
     const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&units=metric&appid=${apiKey}`);
+
     const data = response.data;
     setWeatherData([data]);
   };
